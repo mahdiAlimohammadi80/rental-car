@@ -417,3 +417,87 @@ header .explore-btn:hover{
     color: #8d8dcb;
     margin-top: 10px;
 }
+.category{
+    margin-top: 20px;
+    padding: 20px 100px;
+}
+.category .container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+}
+.category .gallery{
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+.category .title-text{
+    position: absolute;
+    right: 100px;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.category .title-text h4 {
+    font-size: 35px;
+    font-weight: 500;
+    width: 400px;
+    text-align: center;
+    color: rgb(168, 190, 211);
+}
+.category .title-text p{
+    font-size: 20px;
+    opacity: .8;
+    width: 320px;
+    text-align: center;
+    color: rgb(178, 199, 218);
+}
+.category .gallery .images{
+    max-width: 100%;
+    columns: 4 225px;
+    margin-top: 1px;
+    gap: 3px;
+}
+.category .images .card{
+    display: block;
+    width: 100%;
+    list-style: none;
+    border-radius: 6px;
+    position: relative;
+    transition: .2s;
+}
+.category .images .card:nth-child(2) img {
+    height: 422px;
+}
+.category .images .card:nth-child(6) img {
+    height: 423px;
+}
+.category .images img{
+    width: 100%;
+    object-fit: cover;
+}
+.category .images .card:hover img{
+    filter: blur(3px) brightness(40%);
+}
+.category .images .card h4{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+    z-index: -100;
+    opacity: 0;
+    transition: cubic-bezier(0.77, 0, 0.175, 1) .2s;
+}
+.category .images .card:hover h4 {
+    z-index: 100;
+    opacity: 1;
+}
