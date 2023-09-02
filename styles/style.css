@@ -361,3 +361,59 @@ header .explore-btn:hover{
     color: #fff;
     cursor: pointer;
 }
+.steps{
+    margin-top: 30px;
+    padding: 20px 120px;
+}
+.steps h2{
+    font-size: 25px;
+    font-weight: 500;
+    color: #333;
+    padding-left: 20px;
+}
+.steps .container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+}
+.steps .box{
+    padding: 20px;
+    background-color: #fff;
+    width: 378px;
+    border-radius: 10px;
+    margin: 20px;
+    transition: .2s;
+}
+.steps .box:hover{
+    background-color: rgb(208, 222, 236);
+}
+.steps .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    /* margin: 0 auto; */
+    background:linear-gradient(45deg , rgb(186, 186, 226) , rgb(204, 211, 212));
+    border-radius: 10px;
+}
+.steps .icon i{
+    font-size: 30px;
+    color: #fff;
+}
+.steps .box h4{
+    font-size: 22px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+.steps .box p{
+    font-size: 16px;
+    text-align: justify;
+    opacity: .7;
+}
+.steps .box a{
+    text-decoration: none;
+    color: #8d8dcb;
+    margin-top: 10px;
+}
