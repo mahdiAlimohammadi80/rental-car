@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Cars</title>
+</head>
+<body>
+    <header >
+        <div class="container">
+            <div class="menu">
+                <div class="logo">
+                    <a href="" class="logo-text">RentalCar</a>
+                </div>
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="" class="menu-link">Home</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="" class="menu-link">Services</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="" class="menu-link">About</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="" class="menu-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="number-user">
+                <div class="number-day">
+                    <span>09931451234</span>
+                    <span>monday,30july</span>
+                </div>
+                <div class="user-icon">
+                    <i class='bx bx-user'></i>
+                </div>
+                <div class="button">
+                    <button class="explore-btn">Explore</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-box">
+        <div class="filter-box">
+            <h2 class="main-title">Filters</h2>
+            <div class="price-filter main-filter-box">
+                <h4>Price Range</h4>
+                <div class="price-range-box">
+                    <span class="notice">The Max price is 10000$</span>
+                    <div class="slider">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="range-input">
+                        <input type="range" class="min-input" min="0" max="10000" value="2500" step="100">
+                        <input type="range" class="max-input" min="0" max="10000" value="7500" step="100">
+                    </div>
+                    <div class="range-number">
+                        <div class="min-range number-box">
+                            <span>Min</span>
+                            <input type="number" class="min-value" value="2500">
+                        </div>
+                        <div class="max-range number-box">
+                            <span>Max</span>
+                            <input type="number" class="max-value" value="7500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="car-model main-filter-box">
+                <h4>Model</h4>
+                <div class="select">
+                    <span class="select-text">Choose Model</span>
+                    <div class="header">
+                        <input type="text" id="model-input" class="header-text" value="All">
+                        <i class='bx bx-chevron-down'></i>
+                        <ul class="select-list">
+                            <li class="select-item">All</li>
+                            <li class="select-item">2022</li>
+                            <li class="select-item">2021</li>
+                            <li class="select-item">2020</li>
+                            <li class="select-item">2019</li>
+                            <li class="select-item">2018</li>
+                            <li class="select-item">2017</li>
+                            <li class="select-item">2016</li>
+                            <li class="select-item">2015</li>
+                            <li class="select-item">2014</li>
+                            <li class="select-item">2013</li>
+                            <li class="select-item">2012</li>
+                            <li class="select-item">2011</li>
+                            <li class="select-item">2010</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="car-type main-filter-box">
+                <h4>Type</h4>
+                <div class="type">
+                    <div class="column">
+                        <input type="checkbox" class="type-input active" value="No Type">
+                        <label for="">No Type</label>
+                    </div>
+                    <div class="column">
+                        <input type="checkbox" class="type-input " value="Sport">
+                        <label for="">Sport</label>
+                    </div>
+                    <div class="column">
+                        <input type="checkbox" class="type-input " value="sedan">
+                        <label for="">Sedan</label>
+                    </div>
+                    <div class="column">
+                        <input type="checkbox" class="type-input " value="Jeep">
+                        <label for="">Jeep</label>
+                    </div>
+                </div>
+            </div>   
+            <div class="special-option main-filter-box">
+                <h4>Special Option</h4>
+                <div class="select">
+                    <span class="select-text">Choose Special Option That you want</span>
+                    <div class="header">
+                        <input type="text" id="option-input" class="header-text" value="Select Option" disabled>
+                        <i class='bx bx-chevron-down'></i>
+                        <ul class="select-list">
+                            <li class="select-item">All</li>
+                            <li class="select-item">GPS</li>
+                            <li class="select-item">Sunroof</li>
+                            <li class="select-item">Keyless Start</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <div class="option-list">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
