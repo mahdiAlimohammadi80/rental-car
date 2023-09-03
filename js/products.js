@@ -93,3 +93,59 @@ products.forEach((product)=>{
 </div>`;
     productList.insertAdjacentHTML('beforeend', carCard);
   });
+
+  //--------------------------------------------------------------
+
+  // price range
+
+const rangeInputs = document.querySelectorAll('.range-input input');
+const progress = document.querySelector('.progress');
+const priceNumber = document.querySelectorAll('.number-box input');
+console.log(priceNumber);
+
+let priceBetween = 1500;
+
+priceNumber.forEach(function(input){
+    input.addEventListener('input',function(e){
+        let minVal = parseInt(priceNumber[0].value);
+        let maxVal =  parseInt(priceNumber[1].value);
+
+        if((maxVal - minVal >= priceBetween) && maxVal <=10000){
+            if(e.target.className == 'min-value'){
+                rangeInputs[0].value = minVal ;
+                progress.style.left = (minVal / rangeInputs[0].max) * 100+'%';
+                applyFilters();
+            }else{
+                rangeInputs[1].value = maxVal ;
+                progress.style.right = 100 - (maxVal / rangeInputs[1].max) * 100+'%';
+                applyFilters();
+            }
+        }
+
+        
+    })
+})
+
+
+rangeInputs.forEach(function(input){
+    input.addEventListener('input',function(e){
+        let minVal = parseInt(rangeInputs[0].value);
+        let maxVal =  parseInt(rangeInputs[1].value);
+
+        if(maxVal - minVal < priceBetween){
+            if(e.target.className == 'min-input'){
+                rangeInputs[0].value = maxVal - priceBetween ;
+            }else{
+                rangeInputs[1].value = minVal + priceBetween ;
+            }
+        }else{
+            priceNumber[0].value = minVal;
+            priceNumber[1].value = maxVal;
+            progress.style.left = (minVal / rangeInputs[0].max) * 100+'%';
+            progress.style.right = 100 - (maxVal / rangeInputs[1].max) * 100+'%';
+        }
+
+       
+    })
+})
+
