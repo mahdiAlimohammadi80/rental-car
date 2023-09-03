@@ -245,3 +245,65 @@ typeItem.forEach((item)=>{
         applyFilters();
     })
 })
+
+//----------------------------------------------------------------
+
+// apply filter
+
+let filteredProducts = [...products];
+  
+function applyFilters() {
+    const minPrice = parseInt(document.querySelector('.min-value').value);
+    const maxPrice = parseInt(document.querySelector('.max-value').value);
+    const selectedModel = selectModelInput.getAttribute('value');
+    const selectedType = document.querySelector('.type .active').value;
+
+    filteredProducts = products.filter(product => {
+        return product.price >= minPrice && product.price <= maxPrice;
+    });
+    
+    if (selectedType !== 'No Type') {
+        filteredProducts = products.filter(product => {
+            return product.type === selectedType &&
+                    product.price >= minPrice &&
+                    product.price <= maxPrice 
+        });
+    }
+
+    if (selectedModel !== 'All') {
+        filteredProducts = products.filter(product => {
+            return product.model === parseInt(selectedModel) &&
+                    product.price >= minPrice &&
+                    product.price <= maxPrice &&
+                    product.type === selectedType ;
+        });
+    }
+    if (selectedModel == 'All' && selectedType == 'No Type') {
+        filteredProducts = products.filter(product => {
+            return product.price >= minPrice &&
+                    product.price <= maxPrice 
+                  
+        });
+    }
+    if (selectedModel == 'All' && selectedType != 'No Type') {
+        filteredProducts = products.filter(product => {
+            return product.price >= minPrice &&
+                    product.price <= maxPrice &&
+                    product.type === selectedType 
+        });
+    }
+    if (selectedModel != 'All' && selectedType == 'No Type') {
+        filteredProducts = products.filter(product => {
+            return product.price >= minPrice &&
+                    product.price <= maxPrice &&
+                    product.model === parseInt(selectedModel)
+        });
+    }
+    
+    if (allOption.length > 0) {
+        filteredProducts = filteredProducts.filter(product => {
+            return allOption.every(option => product.options.includes(option.name));
+        });
+    }
+
+}
