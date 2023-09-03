@@ -305,5 +305,97 @@ function applyFilters() {
             return allOption.every(option => product.options.includes(option.name));
         });
     }
-
+    updateProductList()
 }
+
+// show product after filter
+
+function updateProductList() {
+    const productList = document.querySelector('.car-cards');
+    productList.innerHTML = ''; 
+  
+    filteredProducts.forEach(product => {
+      let newCard = `<div class="car-card">
+      <div class="label">
+          <span>10</span>
+          <i class="fa-solid fa-percent"></i>
+      </div>
+      <div class="image">
+          <img src="${product.Image}" alt="product-img">
+      </div>
+      <div class="details">
+          <h4 class="card-title">${product.name}</h4>
+          <span class="car-company">Benz</span>
+          <div class="color-box">
+              <span>Color :</span>
+              <div class="colors">
+                  <div class="color active" style="background-color: red;" data-color="red"></div>
+                  <div class="color" style="background-color: blue;" data-color="blue"></div>
+                  <div class="color" style="background-color: gray;" data-color="gray"></div>
+              </div>
+          </div>
+          <div class="Specification">
+              <div class="type-box Specification-box">
+                  <span class="text">Type :&nbsp</span>
+                  <span class="type main-Specification">${product.type}</span>
+              </div>
+              <div class="model-box Specification-box">
+                  <span class="text">Model :&nbsp</span>
+                  <span class="model main-Specification">${product.model}</span>
+              </div>
+              <div class="people-box Specification-box">
+                  <span class="text">People :&nbsp</span>
+                  <span class="people main-Specification">${product.people}</span>
+              </div>
+          </div>
+          <div class="info">
+            <span class="info-text">Special Option :</span>
+            <div class="main-info-box">
+            ${product.options.map(option => `
+                <div class="info-box">
+                    <i class="fa-solid fa-font-awesome"></i>
+                    <span>${option}</span>
+                </div>
+        `).join('')}
+    </div>
+</div>
+
+          <div class="price-button">
+              <div class="price">
+                  <span class="main-price">${product.price}$</span>
+                  <div class="discount">
+                      <span class="discount-text">2200$</span>
+                      <div class="discount-time">
+                          <div class="time">
+                              <span class="time-number ">3</span>
+                              <span class="time-text ">Day</span>
+                          </div>
+                          <div class="time">
+                              <span class="time-number ">13</span>
+                              <span class="time-text ">hour</span>
+                          </div>
+                          <div class="time">
+                              <span class="time-number ">34</span>
+                              <span class="time-text ">minute</span>
+                          </div>
+                          <div class="time">
+                              <span class="time-number ">38</span>
+                              <span class="time-text ">second</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="button">
+                  <button class="select-btn" onclick="selectCar(this)">Select</button>
+              </div>
+          </div>
+      </div>
+  </div>`;
+
+      productList.innerHTML += newCard;
+    });
+  }
+
+  document.querySelectorAll('.main-filter-box input, .main-filter-box select').forEach(input => {
+    input.addEventListener('input', applyFilters);
+  });
