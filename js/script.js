@@ -52,3 +52,16 @@ secondMenuLink.forEach((link) => {
         link.removeEventListener('mousemove',showCarPicture);
     });
 }) 
+
+//---------------------------------------------------------------
+
+//sticky filterBox
+
+const filterBox = document.querySelector('.filter-box');
+
+window.addEventListener('scroll',()=>{
+    if (window.scrollY > 60){
+       return filterBox.classList.add('fix');
+    }
+    filterBox.classList.remove('fix');
+})
