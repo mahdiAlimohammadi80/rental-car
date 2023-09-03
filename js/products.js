@@ -149,3 +149,22 @@ rangeInputs.forEach(function(input){
     })
 })
 
+//------------------------------------------------------------------
+
+// show filter-list
+
+const modelSelect = document.querySelector('.car-model .select');
+const modelHeaderSelect = document.querySelector('.car-model .select .header');
+const OptionSelect = document.querySelector('.special-option .select');
+const OptionHeaderSelect = document.querySelector('.special-option .select .header');
+
+modelSelect.addEventListener('click',()=>{
+    modelHeaderSelect.classList.toggle('active');
+})
+
+OptionSelect.addEventListener('click',()=>{
+    OptionHeaderSelect.classList.toggle('active');
+})
+
+//----------------------------------------------------------------
+
