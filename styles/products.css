@@ -18,6 +18,217 @@
 body{
     background-color: rgb(224, 237, 249);
 }
+input[type = 'number']::-webkit-inner-spin-button{
+    display: none;
+}
+input[type = 'number']::-webkit-outer-spin-button{
+    display: none;
+}
+input[type = 'text']{
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    pointer-events: none;
+}
+.main-box{
+    display: flex;
+    padding: 20px 120px;
+}
+.car-cards{
+    max-width: calc(100% - 280px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.car-card{
+    position: relative;
+    display: flex;
+    border-radius: 6px;
+    padding: 20px;
+    background-color: #fff;
+    margin: 10px;
+    transition: .2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.car-card:hover{
+    transform: scale(1.01);
+}
+.car-card .label{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 50px;
+    border-radius: 0 0 0 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7da3db;
+    color: #fff;
+}
+.car-card .label span{
+    font-size: 15px;
+}
+.car-card .label i{
+    margin-left: 5px;
+    font-size: 16px;
+}
+.car-card .image{
+    width: 400px;
+    height: 320px;
+}
+.car-card .image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.car-card .details{
+    width: 80%;
+    margin-left: 20px;
+}
+.details .card-title{
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+}
+.details .car-company{
+    font-size: 16px;
+    opacity: .8;
+    color: #333;
+}
+.details .color-box{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+.details .color-box span{
+    font-size: 16px;
+    opacity: .8;
+    margin-right: 8px;
+}
+.details .colors{
+    display: flex;
+    align-items: center;
+}
+.details .colors .color{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: .2s;
+}
+.details .colors .color.active{
+    box-shadow: 0 0 0 2px #fff , 0 0 0 3px #5d5b5b;
+}
+.details .Specification{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+.details .Specification-box{
+    display: flex; 
+    align-items: center;
+    margin-left: 15px;
+}
+.details .Specification-box .text{
+    font-size: 15px;
+    opacity: .8;
+}
+.details .main-Specification{
+    font-size: 16px;
+    color: #333;
+}
+.details .info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.details .info-text{
+    font-size: 16px;
+    opacity: .8;
+}
+.details .main-info-box{
+    display: flex;
+    align-items: center;
+}
+.details .info-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #777;
+    padding: 5px;
+    border-radius: 6px;
+    margin: 5px;
+}
+.details .info-box i{
+    font-size: 20px;
+    color: #777;
+}
+.price-button{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+.price-button .price{
+    display: flex;
+    align-items: center;
+}
+.main-price{
+    font-size: 20px;
+    text-decoration: line-through;
+    color: #777;
+    margin-right: 20px;
+}
+.discount{
+    display: flex;
+    align-items: center;
+}
+.discount-text{
+    font-size: 24px;
+    color: #333;
+}
+.discount-time{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    color: #777;
+}
+.discount-time .time{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    background: rgba(255, 255, 255, .4);
+    border-radius: 6px;
+    padding: 5px;
+}
+.price-button .button{
+    width: 120px;
+    height: 40px;
+}
+.price-button .select-btn{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background-color: rgb(88, 178, 234);
+    color: #fff;
+    color: 16px;
+    cursor: pointer;
+    transition: .2s;
+}
+.price-button .select-btn:hover{
+    background-color: rgb(64, 152, 206);
+}
 .filter-box{
     max-width: 280px;
     width: 100%;
