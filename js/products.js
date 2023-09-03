@@ -168,3 +168,16 @@ OptionSelect.addEventListener('click',()=>{
 
 //----------------------------------------------------------------
 
+// model filter select 
+
+const modelItem = document.querySelectorAll('.car-model .select-item');
+const selectModelInput = document.querySelector('#model-input');
+
+modelItem.forEach((item)=>{
+    item.addEventListener('click',()=>{
+        modelSelect.classList.remove('active');
+        selectModelInput.setAttribute('value', item.innerHTML);
+        applyFilters();
+    })
+});
+
