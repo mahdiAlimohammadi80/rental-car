@@ -181,3 +181,56 @@ modelItem.forEach((item)=>{
     })
 });
 
+//----------------------------------------------------------------
+
+// special option filter select
+
+const optionItem = document.querySelectorAll('.special-option .select-item');
+const optionHeaderText = document.querySelector('.special-option .header-text');
+const optionList = document.querySelector('.option-list');
+
+let allOption =[];
+
+
+function deleteOption(elem){
+    let specialOptionValue = elem.closest('.option-box').querySelector('span').innerHTML;
+    let findOption = allOption.findIndex((option)=>{
+        return option.name == specialOptionValue;
+    })
+    allOption.splice(findOption , 1);
+    showOption();
+    applyFilters();
+}
+
+function showOption(){
+    document.querySelectorAll('.option-list .option-box').forEach((item)=>{
+        item.remove();
+    })
+    allOption.forEach((option)=>{
+        let newItem = `<div class="option-box">
+        <span>${option.name}</span>
+        <i class='bx bx-x' onclick="deleteOption(this)"></i>
+    </div>`;
+    optionList.innerHTML += newItem; 
+    })
+}
+
+optionItem.forEach((item)=>{
+    item.addEventListener('click',()=>{
+        let findOption = allOption.find((option)=>{
+            return option.name == item.innerHTML;
+        })
+        if(findOption){
+            return;
+        }else{
+            let newOption ={
+                name:item.innerHTML
+            }
+            allOption.push(newOption);
+            showOption();
+            applyFilters();
+        }
+    })
+})
+
+

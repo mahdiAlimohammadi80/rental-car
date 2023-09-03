@@ -377,7 +377,7 @@ input[type = 'text']{
 }
 .filter-box .select .select-text{
     opacity: .8;
-    font-size: 15px;
+    font-size: 14px;
 }
 .filter-box .select .header{
     display: flex;
@@ -462,6 +462,9 @@ input[type = 'text']{
 }
 .filter-box .type .type-input.active ~ label{
     color: #fff;
+}
+.filter-box .special-option{
+    margin-top: 30px;
 }
 .filter-box .special-option .select{
     display: flex;
