@@ -233,4 +233,15 @@ optionItem.forEach((item)=>{
     })
 })
 
+//----------------------------------------------------------------
 
+// type filter select
+
+const typeItem = document.querySelectorAll('.car-type .type input');
+typeItem.forEach((item)=>{
+    item.addEventListener('click',()=>{
+        document.querySelector('.car-type .type input.active').classList.remove('active');
+        item.classList.add('active');
+        applyFilters();
+    })
+})
