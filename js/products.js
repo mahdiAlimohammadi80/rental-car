@@ -399,3 +399,32 @@ function updateProductList() {
   document.querySelectorAll('.main-filter-box input, .main-filter-box select').forEach(input => {
     input.addEventListener('input', applyFilters);
   });
+
+  //-----------------------------------------------------------
+
+  // select car and add to modal rent
+
+  let modalArray = [];
+
+  const modalBox = document.querySelector('.modal-rent');
+
+  function selectCar(elem){
+    let expectCar = elem.closest('.car-card');
+    let carTitle = expectCar.querySelector('.card-title').innerHTML;
+    products.forEach((product)=>{
+        if(product.name == carTitle){
+            let newOrder = {
+                name:product.name,
+                image:product.Image,
+                price:product.price,
+                company:product.company,
+                options:product.options,
+                type:product.type,
+                model:product.model
+            }
+            modalArray.push(newOrder);
+           
+        }
+    })
+    document.body.classList.add('active');
+}
