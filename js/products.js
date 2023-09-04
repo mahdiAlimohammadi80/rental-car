@@ -86,7 +86,7 @@ products.forEach((product)=>{
                 </div>
             </div>
             <div class="button">
-                <button class="select-btn">Select</button>
+                <button class="select-btn" onclick="selectCar(this)">Select</button>
             </div>
         </div>
     </div>
