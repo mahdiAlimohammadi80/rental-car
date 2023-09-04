@@ -407,6 +407,13 @@ function updateProductList() {
   let modalArray = [];
 
   const modalBox = document.querySelector('.modal-rent');
+  const modalPayClose = document.querySelector('.modal-pay-close');
+
+function closeModal(elem){
+    elem.addEventListener('click',()=>{
+        document.body.classList.remove('active');
+    })
+}
 
   function showModal(){
     modalBox.innerHTML ='';
