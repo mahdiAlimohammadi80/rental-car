@@ -408,6 +408,112 @@ function updateProductList() {
 
   const modalBox = document.querySelector('.modal-rent');
 
+  function showModal(){
+    modalBox.innerHTML ='';
+    modalArray.forEach((modal)=>{
+        let newItem = `<div class="title-closeBtn">
+        <h2 class="main-title">Order details</h2>
+        <i class='bx bx-x modal-pay-close' onclick="closeModal(this)"></i>
+    </div>
+    <div class="info-form">
+        <div class="info">
+            <div class="image-name">
+                <div class="image">
+                    <img src="${modal.image}" alt="car-picture" class="modal-image">
+                </div>
+                <div class="name">
+                    <h4 class="car-name">${modal.name}</h4>
+                    <span>${modal.company}</span>
+                </div>
+            </div>
+            <div class="details">
+                <div class="color-box">
+                    <span>Color :</span>
+                    <div class="colors">
+                        <div class="color active" style="background-color: red;" data-color="red"></div>
+                    </div>
+                </div>
+                <div class="Specification">
+                    <div class="type-box Specification-box">
+                        <span class="text">Type :&nbsp</span>
+                        <span class="type main-Specification">${modal.type}</span>
+                    </div>
+                    <div class="model-box Specification-box">
+                        <span class="text">Model :&nbsp</span>
+                        <span class="model main-Specification">${modal.model}</span>
+                    </div>
+                </div>
+                <div class="info">
+                    <span class="info-text">Special Option</span>
+                    <div class="main-info-box">
+                    ${modal.options.map(option=>`
+                    <div class="info-box">
+                    <i class="fa-solid fa-font-awesome"></i>
+                    <span>${option}</span>
+                </div>
+                    ` ).join('')}
+                        
+                    </div>
+                </div>
+                <div class="price">
+                    <div class="main-discount">
+                        <span class="main text">Price :&nbsp<span class="main-number num">${modal.price}$</span></span>
+                        <span class="discount text">Discount :&nbsp<span class="discount-number num">0%(0$)</span></span>
+                    </div>
+                    <span class="total-text text">Total Price :&nbsp<span class="total-number num">${modal.price}$</span></span>
+                </div>
+            </div>
+        </div>
+        <div class="form">
+            <form action="">
+                <h4>User & Date Information</h4>
+                <div class="row">
+                    <div class="column">
+                        <label for="">Name</label>
+                        <input type="text">
+                    </div>
+                    <div class="column">
+                        <label for="">LastName</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label for="">Code</label>
+                        <input type="number">
+                    </div>
+                    <div class="column">
+                        <label for="">Phone</label>
+                        <input type="number">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label for="">Date Start</label>
+                        <input type="date" disabled>
+                    </div>
+                    <div class="column">
+                        <label for="">Date End</label>
+                        <input type="date" disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column">
+                        <label for="">Email</label>
+                        <input type="email">
+                    </div>
+                    <div class="column">
+                        <button class="pay-btn">Pay</button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>`;
+    modalBox.innerHTML = newItem;
+    })
+}
+
   function selectCar(elem){
     let expectCar = elem.closest('.car-card');
     let carTitle = expectCar.querySelector('.card-title').innerHTML;
@@ -423,7 +529,8 @@ function updateProductList() {
                 model:product.model
             }
             modalArray.push(newOrder);
-           
+            showModal();
+            modalArray =[];
         }
     })
     document.body.classList.add('active');
